@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5c5b5b"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context="com.android.musicplayer.PlayActivity">
+
+    <ImageView
+        android:id="@+id/imageButton1_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/player_btn_next_normal"/>
+
+    <ImageView
+        android:id="@+id/imageButton2_play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageButton1_next"
+        android:layout_toLeftOf="@id/imageButton1_next"
+        android:src="@mipmap/play"/>
+
+
+    <ImageView
+        android:id="@+id/imageButton3_previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageButton2_play_pause"
+        android:layout_toLeftOf="@id/imageButton2_play_pause"
+        android:src="@mipmap/player_btn_pre_normal"/>
+
+    <ImageView
+        android:id="@+id/imageButton1_play_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@mipmap/order"/>
+
+    <ImageView
+        android:id="@+id/imageView1_favorite"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@id/imageButton1_play_mode"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="140dp"
+        android:layout_toLeftOf="@id/imageButton3_previous"
+        android:src="@mipmap/xin_bai"
+        />
+
+    <TextView
+        android:id="@+id/textView1_start_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/imageButton1_play_mode"
+        android:layout_alignLeft="@id/imageButton1_play_mode"
+        android:layout_marginBottom="10dp"
+        android:text="00:00"
+        android:textColor="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/textView1_end_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/imageButton1_play_mode"
+        android:layout_alignRight="@id/imageButton1_next"
+        android:layout_marginBottom="10dp"
+        android:text="00:00"
+        android:textColor="@android:color/darker_gray"/>
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textView1_start_time"
+        android:layout_alignParentLeft="true"
+        android:indeterminate="false"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/seekBar1"
+        android:layout_gravity="center"/>
+
+
+</RelativeLayout>
