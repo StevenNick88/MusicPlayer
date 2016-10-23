@@ -1,5 +1,6 @@
 package com.android.musicplayer;
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +10,8 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
+import java.util.ArrayList;
+
 /**
  * Created by Administrator on 2016/10/19.
  */
@@ -16,13 +19,23 @@ public abstract class BaseActivity extends FragmentActivity {
 
     protected PlayService playService;
     private boolean isBound = false;
-
+    private static ArrayList<Activity> listActivity=new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        ActionBar actionBar=this.getActionBar();
 //        actionBar.setIcon(R.mipmap.app_logo2);
+        listActivity.add(this);
+    }
+
+    /**
+     * 全局退出功能
+     */
+    public static void exitApp(){
+        for (int i=0;i<listActivity.size();i++){
+            listActivity.get(i).finish();
+        }
     }
 
     private ServiceConnection conn=new ServiceConnection() {

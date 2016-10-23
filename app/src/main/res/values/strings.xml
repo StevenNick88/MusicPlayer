@@ -9,5 +9,6 @@
     <string name="i_like">我喜欢</string>
     <string name="near_play">最近播放</string>
     <string name="net_recommend">网络推荐</string>
+    <string name="download">下载</string>
 
 </resources>

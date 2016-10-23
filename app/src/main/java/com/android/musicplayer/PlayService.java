@@ -146,6 +146,9 @@ public class PlayService extends Service implements MediaPlayer.OnCompletionList
             es.shutdown();
             es = null;
         }
+        player=null;
+        mp3Infos=null;
+        musicUpdateListener=null;
     }
 
     Runnable updateStateRunnable = new Runnable() {
@@ -259,4 +262,6 @@ public class PlayService extends Service implements MediaPlayer.OnCompletionList
     public void setMusicUpdateListener(MusicUpdateListener musicUpdateListener) {
         this.musicUpdateListener = musicUpdateListener;
     }
+
+
 }

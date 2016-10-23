@@ -112,8 +112,13 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
                 break;
 
+            case R.id.exit:
+                intent = new Intent(this, PlayService.class);
+                stopService(intent);
+                exitApp();
+                break;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     private void changeColor(int newColor) {

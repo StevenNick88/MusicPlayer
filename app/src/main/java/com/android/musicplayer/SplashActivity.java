@@ -8,6 +8,7 @@ import android.os.Message;
 import android.view.Window;
 import android.view.WindowManager;
 
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -29,6 +30,15 @@ public class SplashActivity extends Activity {
 
         handler.sendEmptyMessageDelayed(START_ACTIVITY,3000);
 
+//        Timer timer=new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                finish();
+//            }
+//        },3000);
+
     }
 
     private Handler handler=new Handler(){
@@ -38,10 +48,13 @@ public class SplashActivity extends Activity {
             switch (msg.what){
                 case START_ACTIVITY:
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    finish();
                     break;
             }
         }
     };
+
+
 
 
 }

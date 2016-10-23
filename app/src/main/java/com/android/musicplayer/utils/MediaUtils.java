@@ -1,6 +1,5 @@
 package com.android.musicplayer.utils;
 
-import android.app.Notification;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
@@ -10,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
-import android.renderscript.Sampler;
 import android.util.Log;
 
 import com.android.musicplayer.R;
@@ -21,7 +19,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.IllegalFormatCodePointException;
 
 /**
  * Created by Administrator on 2016/10/18.
@@ -168,10 +165,10 @@ public class MediaUtils {
         BitmapFactory.Options opts = new BitmapFactory.Options();
         opts.inPreferredConfig = Bitmap.Config.RGB_565;
         if (small) {//返回小图片
-            return BitmapFactory.decodeStream(context.getResources().openRawResource(R.mipmap.app_logo2), null, opts);
+            return BitmapFactory.decodeStream(context.getResources().openRawResource(R.raw.app_logo2), null, opts);
         }
 
-        return BitmapFactory.decodeStream(context.getResources().openRawResource(R.mipmap.app_logo2), null, opts);
+        return BitmapFactory.decodeStream(context.getResources().openRawResource(R.raw.app_logo2), null, opts);
 
     }
 
